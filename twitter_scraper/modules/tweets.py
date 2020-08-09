@@ -15,6 +15,8 @@ def get_tweets(query, pages=25):
     if query.startswith("#"):
         query = quote(query)
         url = f"https://twitter.com/i/search/timeline?f=tweets&vertical=default&q={query}&src=tyah&reset_error_state=false&"
+    elif query.startswith("$"):
+        url = f"https://twitter.com/i/search/timeline?f=tweets&vertical=default&q={query}&src=tyah&reset_error_state=false&"
     else:
         url = f"https://twitter.com/i/profiles/show/{query}/timeline/tweets?"
     url += after_part
